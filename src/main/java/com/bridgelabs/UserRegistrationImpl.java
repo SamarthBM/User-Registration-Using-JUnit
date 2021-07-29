@@ -55,8 +55,8 @@ public class UserRegistrationImpl {
         /*
          * Purpose: Boolean method to validate user's password.
          * Rule 1: Password should have minimum 8 characters.
-         * Rule 2: Password should have atleast one upper-case.
-         * Rule 3: Password should have atleast one numeric value.
+         * Rule 2: Password should have at least one upper-case.
+         * Rule 3: Password should have at least one numeric value.
          * Rule 4: Password should have only one special character.
          *
          * @param password: Password to validate.
