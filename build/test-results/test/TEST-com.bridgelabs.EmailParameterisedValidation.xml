@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabs.EmailParameterisedValidation" tests="22" skipped="0" failures="0" errors="0" timestamp="2021-07-28T19:18:24" hostname="DESKTOP-IB61PHE" time="0.062">
+  <properties/>
+  <testcase name="validateEmail[0]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.029"/>
+  <testcase name="validateEmail[1]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.0"/>
+  <testcase name="validateEmail[2]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[3]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.0"/>
+  <testcase name="validateEmail[4]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[5]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[6]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[7]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[8]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.0"/>
+  <testcase name="validateEmail[9]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.002"/>
+  <testcase name="validateEmail[10]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[11]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.003"/>
+  <testcase name="validateEmail[12]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.002"/>
+  <testcase name="validateEmail[13]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[14]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.0"/>
+  <testcase name="validateEmail[15]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.003"/>
+  <testcase name="validateEmail[16]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[17]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[18]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[19]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[20]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <testcase name="validateEmail[21]" classname="com.bridgelabs.EmailParameterisedValidation" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
