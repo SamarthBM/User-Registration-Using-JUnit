@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
 
-    UserRegistrationImpl validator = new UserRegistrationImpl();
+    UserRegistration validator = new UserRegistration();
 
     // Test cases to validate First Name.
     @Test

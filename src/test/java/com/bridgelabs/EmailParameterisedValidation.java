@@ -47,7 +47,7 @@ public class EmailParameterisedValidation {
 
     @Test
     public void validateEmailSamples() {
-        UserRegistrationImpl validator = new UserRegistrationImpl();
+        UserRegistration validator = new UserRegistration();
         Assert.assertEquals(this.expectedResult, validator.validateEmail(this.email));
     }
 }

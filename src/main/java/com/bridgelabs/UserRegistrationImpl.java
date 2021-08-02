@@ -5,98 +5,90 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistrationImpl {
-    /*
-     * Purpose: Boolean method to validate first and last name.
-     * Condition for regex is, first name and last name should start
-     * with capital letter and name should have minimum 3 letters.
-     *
-     * @param name: First and last name to validate.
-     */
-    public boolean validateName(String name) {
-        try {
-            if (name.length() == 0) {
-                throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_EMPTY, "First name cannot be empty");
+    static Scanner sc = new Scanner(System.in);
+
+    public void validateUserDetails() {
+
+        // Using Lambda function to validate user details.
+
+        // To validate first name.
+        ValidationFunction firstName = () -> {
+
+            System.out.println("Enter your First name");
+            String name = sc.next();
+
+            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+            Matcher matcher = pattern.matcher(name);
+            if (matcher.matches()) {
+                System.out.println("Given first name is valid");
+            } else {
+                System.out.println("Given first name is not valid");
             }
-            boolean isMatched = Pattern.compile("^[A-Z]{1}[a-z]{2,}$").matcher(name).matches();
-            checkValid(isMatched);
-            return isMatched;
-        } catch (NullPointerException e) {
-            throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_NULL, "First name cannot be empty");
-        }
-    }
+        };
+        firstName.validate();
 
-    /*
-     * Purpose: Boolean method to validate mail ID of user.
-     *
-     * @param mail: mail to validate.
-     */
-    public boolean validateEmail(String mail) {
-        try {
-            if (mail.length() == 0) {
-                throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_EMPTY, "Email cannot be empty");
+        // To validate last name.
+        ValidationFunction lastName = () -> {
+            System.out.println("Enter your last name");
+            String name = sc.next();
+
+            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+            Matcher matcher = pattern.matcher(name);
+            if (matcher.matches()) {
+                System.out.println("Given last name is valid");
+            } else {
+                System.out.println("Given last name is not valid");
             }
-            boolean isMatched = Pattern.compile(
-                            "^[0-9A-Za-z]+(([._+-]{0,1})[0-9A-Za-z]+)*@[0-9A-Za-z]+.[a-z]{2,4}.([a-z]{2,3})*$")
-                    .matcher(mail).matches();
-            checkValid(isMatched);
-            return isMatched;
+        };
+        lastName.validate();
 
-        } catch (NullPointerException e) {
-            throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_NULL, "email cannot be empty");
-        }
+        // To validate Email.
+        ValidationFunction mail = () -> {
+
+            System.out.println("Enter your Email id");
+            String email = sc.next();
+
+            Pattern pattern = Pattern.compile("^[0-9A-Za-z]+(([._+-]{0,1})[0-9A-Za-z]+)*@[0-9A-Za-z]+.[a-z]{2,4}.([a-z]{2,3})*$");
+            Matcher matcher = pattern.matcher(email);
+            if (matcher.matches())
+                System.out.println("Given email id is valid");
+             else
+                System.out.println("Given email id is not valid");
+        };
+        mail.validate();
+
+        // To validate phone number.
+        ValidationFunction phoneNumber = () -> {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("Enter your Mobile number");
+            String mobile = sc.nextLine();
+            // Console does not support space.
+            Pattern pattern = Pattern.compile("^(91)[0-9]{10}$");
+            Matcher matcher = pattern.matcher(mobile);
+            if (matcher.matches())
+                System.out.println("Given mobile number is valid");
+             else
+                System.out.println("Given mobile number is not valid");
+        };
+        phoneNumber.validate();
+
+        // To validate password.
+        ValidationFunction Password = () -> {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("Enter your Password");
+            String password = sc.next();
+
+            Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+            Matcher matcher = pattern.matcher(password);
+            if (matcher.matches())
+                System.out.println("Given password is valid");
+             else
+                System.out.println("Given password is not valid");
+        };
+        Password.validate();
     }
-
-    /*
-     * Purpose: Boolean method to validate user's mobile number.
-     * Condition 1: Mobile number should start with 91
-     * Condition 2: Mobile number should have 10 numbers.
-     *
-     * @param mobileNumber: mobile number to validate.
-     */
-    public boolean validateMobileNumber(String mobileNumber) {
-        try {
-            if (mobileNumber.length() == 0) {
-                throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_EMPTY, "Phone Number cannot be empty");
-            }
-            boolean isMatched = Pattern.compile("^(91)[\\s][0-9]{10}$").matcher(mobileNumber).matches();
-            checkValid(isMatched);
-            return isMatched;
-        } catch (NullPointerException e) {
-            throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_NULL, "Phone number cannot be empty");
-        }
-    }
-
-    /*
-     * Purpose: Boolean method to validate user's password.
-     * Rule 1: Password should have minimum 8 characters.
-     * Rule 2: Password should have at least one upper-case.
-     * Rule 3: Password should have at least one numeric value.
-     * Rule 4: Password should have only one special character.
-     *
-     * @param password: Password to validate.
-     */
-    public boolean validatePassword(String password) {
-        try {
-            if (password.length() == 0) {
-                throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_EMPTY, "Password cannot be empty");
-            }
-            boolean isMatched = Pattern.compile("^(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)(?=.*[a-z])(?=.*[A-Z]).{8,}$")
-                    .matcher(password).matches();
-            checkValid(isMatched);
-            return isMatched;
-        } catch (NullPointerException e) {
-            throw new UserRegitrationException(UserRegitrationException.ExceptionType.ENTERED_NULL, "Password cannot be empty");
-        }
-    }
-
-    /* Purpose: Method to check whether result is valid or invalid*/
-    public void checkValid(boolean isMatched) {
-        if (isMatched) {
-            System.out.println("valid");
-        } else {
-            System.out.println("invalid");
-        }
-    }
-
-
 }
+
+
